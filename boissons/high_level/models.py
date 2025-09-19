@@ -1,3 +1,5 @@
+From django.contrib import admin 
+
 class QuantiteMatierePremiere(models.Model):
 quantite = models.IntegerField()
 matiere_premiere = models.ForeignKey(
