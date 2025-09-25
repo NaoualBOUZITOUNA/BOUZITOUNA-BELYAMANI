@@ -1,13 +1,21 @@
-From django.contrib import admin 
+from django.db import models
+
+class MatierePremiere(models.Model):
+    nom = models.CharField(max_length=100)
+    stock = models.IntegerField()
+    emprise = models.IntegerFieldd()
+
+    def _str_(self):
+        return self.nom
 
 class QuantiteMatierePremiere(models.Model):
-quantite = models.IntegerField()
-matiere_premiere = models.ForeignKey(
-MatierePremiere,
-on_delete=models.PROTECT,
+      quantite = models.IntegerField()
+      matiere_premiere = models.ForeignKey(
+      MatierePremiere,
+      on_delete=models.PROTECT,
 )
-class Meta:
-abstract = True
+     class Meta:
+        abstract = True
 
 
 class Localisation(models.Model):
@@ -29,7 +37,7 @@ class Energie(models.Model):
 
 
 class DebitEnergie(models.Model):
-    debit = models.ntegerField()
+    debit = models.IntegerField()
     energie = models.ForeignKey(Energie, on_delete=models.PROTECT)
 
     def _str_(self):
@@ -56,13 +64,7 @@ class Produit(models.Model):
         return self.nom
 
 
-class MatierePremiere(models.Model):
-    nom = models.CharField(max_length=100)
-    stock = models.IntegerField()
-    emprise = models.IntegerFieldd()
 
-    def _str_(self):
-        return self.nom
 
 
 class QuantiteMatierePremiere(models.Model):
