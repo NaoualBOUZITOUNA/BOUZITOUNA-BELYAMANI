@@ -213,7 +213,8 @@ class Machine(models.Model):
         return self.nom
 
     def costs(self):
-        return self.cout_maintenance
+        return self.prix_achat
+
     def json(self):
         return {
             "id": self.id,
