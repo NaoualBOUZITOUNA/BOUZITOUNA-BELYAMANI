@@ -1,6 +1,6 @@
-# Create your tests here.
 from django.test import TestCase
 
+from .models import Metier
 
 class CostCalculationTestCase(TestCase):
     def test_local_costs(self):

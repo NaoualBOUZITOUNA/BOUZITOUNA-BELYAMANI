@@ -76,17 +76,6 @@ class Produit(models.Model):
         return self.nom
 
 
-class QuantiteMatierePremiere(models.Model):
-    quantite = models.IntegerField()
-    matiere_premiere = models.ForeignKey(MatierePremiere, on_delete=models.PROTECT)
-
-    class Meta:
-        abstract = True  # comme dans ton exemple
-
-    def _str_(self):
-        return f"{self.quantite} de {self.matiere_premiere.nom}"
-
-
 class UtilisationMatierePremiere(QuantiteMatierePremiere):
     # hérite de QuantiteMatierePremiere
     pass
